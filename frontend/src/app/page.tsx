@@ -67,7 +67,6 @@ export default function Home() {
   useEffect(() => {
     if (editing) {
       editRef.current?.focus();
-      editRef.current?.select();
     }
   }, [editing]);
 
