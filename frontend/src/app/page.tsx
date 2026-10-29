@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState, type KeyboardEvent } from "react";
 
 const COLUMNS = [
   "Party BillNo",
@@ -137,7 +137,7 @@ export default function Home() {
   };
 
   const handleCellKeyDown = (
-    event: React.KeyboardEvent<HTMLInputElement>,
+    event: KeyboardEvent<HTMLInputElement>,
     rowIndex: number,
     columnIndex: number,
   ) => {
@@ -246,7 +246,7 @@ export default function Home() {
               </colgroup>
               <thead>
                 <tr>
-                  <th className="corner-cell" scope="col" aria-label="Row number"><span className="corner-mark" /></th>
+                  <th className="corner-cell" scope="col" aria-label="Row 0, column headers"><span>0</span></th>
                   {COLUMNS.map((column, index) => (
                     <th className={selectedCell.row === -1 && selectedCell.column === index ? "column-header selected-header" : "column-header"} key={column} scope="col">
                       <button
